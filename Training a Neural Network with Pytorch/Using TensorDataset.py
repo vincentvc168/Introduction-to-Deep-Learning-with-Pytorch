@@ -29,3 +29,14 @@ dataset = TensorDataset(torch.tensor(X), torch.tensor(y))
 input_sample, label_sample = dataset[0]
 print('Input sample:', input_sample)
 print('Label sample:', label_sample)
+
+---
+from torch.utils.data import DataLoader
+
+# Create a DataLoader
+dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
+
+# Iterate over the dataloader
+for batch_inputs, batch_labels in dataloader:
+    print('batch_inputs:', batch_inputs)
+    print('batch_labels:', batch_labels)
